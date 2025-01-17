@@ -8,49 +8,30 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class UsuarioDto {
+public record UsuarioDto(
+        Long id,
+        String nome,
+        String sobrenome,
+        EnderecoDto endereco,
+        SenhaDto senha
+) {
 
+    // Construtor customizado para aceitar um objeto Usuario
     public UsuarioDto(Usuario usuario) {
-        this.id = usuario.getId();
-        this.nome = usuario.getNome();
-        this.sobrenome = usuario.getSobrenome();
-        this.endereco = new EnderecoDto(usuario.getEndereco());
-        this.senha = new SenhaDto(usuario.getSenha());
+        this(
+                usuario.getId(),
+                usuario.getNome(),
+                usuario.getSobrenome(),
+                new EnderecoDto(usuario.getEndereco()),
+                new SenhaDto(usuario.getSenha())
+        );
     }
 
-    private Long id;
-
-    private String nome;
-
-    private String sobrenome;
-
-    private EnderecoDto endereco;
-
-    private SenhaDto senha;
-
-
-    public String getNome() {
-        return nome;
+    // Método de conversão de lista
+    public static List<UsuarioDto> converter(List<Usuario> usuarios) {
+        return usuarios.stream()
+                .map(UsuarioDto::new)
+                .collect(Collectors.toList());
     }
-
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public EnderecoDto getEndereco() {
-        return endereco;
-    }
-
-    public SenhaDto getSenha() {
-        return senha;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public static List<UsuarioDto> converter(List<Usuario> usuario) {
-        return usuario.stream().map(UsuarioDto::new).collect(Collectors.toList());
-    }
-
 }
+

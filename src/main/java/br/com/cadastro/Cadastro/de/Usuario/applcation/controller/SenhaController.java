@@ -18,7 +18,7 @@ public class SenhaController {
         this.senhaService = senhaService;
     }
 
-    @PutMapping("{id_usuario}")
+    @PutMapping("/{id_usuario}")
     public ResponseEntity<HttpStatus> atualizarSenha(@PathVariable Long id_usuario, @RequestBody SenhaForm senha){
         this.senhaService.atualizarSenhaPorIdUsuario(id_usuario, senha);
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();

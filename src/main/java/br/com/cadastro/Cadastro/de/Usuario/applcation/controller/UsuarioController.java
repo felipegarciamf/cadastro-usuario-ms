@@ -15,17 +15,17 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/usuario")
-public class CadastroUsuarioController {
+@RequestMapping("/usuarios")
+public class UsuarioController {
 
 
     private IUsuarioService usuarioService;
 
-    public CadastroUsuarioController(IUsuarioService usuarioService) {
+    public UsuarioController(IUsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
 
-    @PostMapping("/cadastrar")
+    @PostMapping
     @Transactional
     public ResponseEntity<Void> cadastrarUsuario(@RequestBody @Validated UsuarioForm usuario){
         this.usuarioService.cadastrarUsuario(usuario.converter());

@@ -15,6 +15,7 @@ public class UsuarioDto {
         this.nome = usuario.getNome();
         this.sobrenome = usuario.getSobrenome();
         this.endereco = new EnderecoDto(usuario.getEndereco());
+        this.senha = new SenhaDto(usuario.getSenha());
     }
 
     private Long id;
@@ -23,8 +24,9 @@ public class UsuarioDto {
 
     private String sobrenome;
 
-    @Embedded
     private EnderecoDto endereco;
+
+    private SenhaDto senha;
 
 
     public String getNome() {
@@ -37,6 +39,10 @@ public class UsuarioDto {
 
     public EnderecoDto getEndereco() {
         return endereco;
+    }
+
+    public SenhaDto getSenha() {
+        return senha;
     }
 
     public Long getId() {

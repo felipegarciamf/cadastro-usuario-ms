@@ -3,6 +3,7 @@ package br.com.cadastro.Cadastro.de.Usuario.applcation.form;
 import br.com.cadastro.Cadastro.de.Usuario.applcation.dto.EnderecoDto;
 import br.com.cadastro.Cadastro.de.Usuario.domain.entity.Usuario;
 import br.com.cadastro.Cadastro.de.Usuario.domain.entity.vo.Endereco;
+import br.com.cadastro.Cadastro.de.Usuario.domain.entity.vo.Senha;
 import jakarta.persistence.Embedded;
 
 public class UsuarioForm {
@@ -13,6 +14,8 @@ public class UsuarioForm {
 
     @Embedded
     private EnderecoForm endereco;
+
+    private SenhaForm senha;
 
 
     public String getNome() {
@@ -39,10 +42,18 @@ public class UsuarioForm {
         this.endereco = endereco;
     }
 
-    public Usuario converter() {
-        Endereco endereco = new Endereco(this.endereco.getCep(), this.endereco.getRua(), this.endereco.getCidade(), this.endereco.getEstado(), this.endereco.getNumero());
-        return new Usuario(this.nome, this.sobrenome, endereco);
+    public SenhaForm getSenha() {
+        return senha;
     }
 
+    public void setSenha(SenhaForm senha) {
+        this.senha = senha;
+    }
+
+    public Usuario converter() {
+        Endereco endereco = new Endereco(this.endereco.getCep(), this.endereco.getRua(), this.endereco.getCidade(), this.endereco.getEstado(), this.endereco.getNumero());
+        Senha senha = new Senha(this.senha.getSenha());
+        return new Usuario(this.nome, this.sobrenome, endereco, senha);
+    }
 
 }

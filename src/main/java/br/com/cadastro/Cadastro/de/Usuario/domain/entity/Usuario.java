@@ -1,6 +1,7 @@
 package br.com.cadastro.Cadastro.de.Usuario.domain.entity;
 
 import br.com.cadastro.Cadastro.de.Usuario.domain.entity.vo.Endereco;
+import br.com.cadastro.Cadastro.de.Usuario.domain.entity.vo.Senha;
 import jakarta.persistence.*;
 
 
@@ -24,6 +25,8 @@ public class Usuario {
     private String nome;
 
     private String sobrenome;
+
+    private Senha senha;
 
     @Embedded
     private Endereco endereco;
@@ -58,5 +61,13 @@ public class Usuario {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public Senha getSenha() {
+        return senha;
+    }
+
+    public void setSenha(Senha senha) {
+        this.senha = senha;
     }
 }

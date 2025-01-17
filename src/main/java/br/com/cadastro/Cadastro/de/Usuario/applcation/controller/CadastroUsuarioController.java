@@ -51,5 +51,4 @@ public class CadastroUsuarioController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
 
-
 }

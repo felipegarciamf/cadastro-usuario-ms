@@ -12,7 +12,7 @@ public class Usuario {
 
     }
 
-    public Usuario(String nome, String sobrenome, Endereco endereco) {
+    public Usuario(String nome, String sobrenome, Endereco endereco, Senha senha) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.endereco = endereco;
@@ -31,6 +31,7 @@ public class Usuario {
 
     @Embedded
     private Endereco endereco;
+
 
     public Long getId() {
         return id;

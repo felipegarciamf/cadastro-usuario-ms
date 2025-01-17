@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/senhas")
 public class SenhaController {
 
-
     private ISenhaService senhaService;
 
     public SenhaController(ISenhaService senhaService) {
@@ -23,7 +22,6 @@ public class SenhaController {
         this.senhaService.atualizarSenhaPorIdUsuario(id_usuario, senha);
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
-
 
 
 }

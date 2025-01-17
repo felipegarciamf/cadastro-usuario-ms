@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
 
@@ -25,7 +25,7 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @PostMapping("/cadastrar")
+    @PostMapping
     @Transactional
     public ResponseEntity<Void> cadastrarUsuario(@RequestBody @Validated UsuarioForm usuario){
         this.usuarioService.cadastrarUsuario(usuario.converter());

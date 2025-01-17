@@ -26,6 +26,7 @@ public class Usuario {
 
     private String sobrenome;
 
+    @Embedded
     private Senha senha;
 
     @Embedded

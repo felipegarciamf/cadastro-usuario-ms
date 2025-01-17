@@ -16,6 +16,7 @@ public class Usuario {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.endereco = endereco;
+        this.senha = senha;
     }
 
     @Id

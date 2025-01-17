@@ -42,11 +42,18 @@ public class UsuarioForm {
         this.endereco = endereco;
     }
 
+    public SenhaForm getSenha() {
+        return senha;
+    }
+
+    public void setSenha(SenhaForm senha) {
+        this.senha = senha;
+    }
+
     public Usuario converter() {
         Endereco endereco = new Endereco(this.endereco.getCep(), this.endereco.getRua(), this.endereco.getCidade(), this.endereco.getEstado(), this.endereco.getNumero());
         Senha senha = new Senha(this.senha.getSenha());
         return new Usuario(this.nome, this.sobrenome, endereco, senha);
     }
-
 
 }

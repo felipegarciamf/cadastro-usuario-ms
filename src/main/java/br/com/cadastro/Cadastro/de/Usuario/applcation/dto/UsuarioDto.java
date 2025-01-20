@@ -16,7 +16,6 @@ public record UsuarioDto(
         SenhaDto senha
 ) {
 
-    // Construtor customizado para aceitar um objeto Usuario
     public UsuarioDto(Usuario usuario) {
         this(
                 usuario.getId(),
@@ -27,7 +26,6 @@ public record UsuarioDto(
         );
     }
 
-    // Método de conversão de lista
     public static List<UsuarioDto> converter(List<Usuario> usuarios) {
         return usuarios.stream()
                 .map(UsuarioDto::new)

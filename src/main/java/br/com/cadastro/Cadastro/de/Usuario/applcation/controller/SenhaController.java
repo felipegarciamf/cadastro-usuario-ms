@@ -1,5 +1,8 @@
 package br.com.cadastro.Cadastro.de.Usuario.applcation.controller;
 
+import br.com.cadastro.Cadastro.de.Usuario.applcation.dto.EnderecoDto;
+import br.com.cadastro.Cadastro.de.Usuario.applcation.dto.SenhaDto;
+import br.com.cadastro.Cadastro.de.Usuario.applcation.dto.UsuarioDto;
 import br.com.cadastro.Cadastro.de.Usuario.applcation.form.SenhaForm;
 import br.com.cadastro.Cadastro.de.Usuario.domain.service.ISenhaService;
 import org.apache.coyote.Response;

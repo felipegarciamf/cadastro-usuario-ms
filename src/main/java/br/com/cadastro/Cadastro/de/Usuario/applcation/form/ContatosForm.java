@@ -1,20 +1,6 @@
-package br.com.cadastro.Cadastro.de.Usuario.domain.entity.vo;
+package br.com.cadastro.Cadastro.de.Usuario.applcation.form;
 
-
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Embedded;
-
-@Embeddable
-public class Contatos {
-
-    public Contatos(){
-
-    }
-
-    public Contatos(String email, String telefone) {
-        this.email = email;
-        this.telefone = telefone;
-    }
+public class ContatosForm {
 
     private String email;
 

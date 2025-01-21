@@ -13,11 +13,12 @@ public class Usuario {
 
     }
 
-    public Usuario(String nome, String sobrenome, Endereco endereco, Senha senha) {
+    public Usuario(String nome, String sobrenome, Endereco endereco, Senha senha, Contatos contatos) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.endereco = endereco;
         this.senha = senha;
+        this.contatos = contatos;
     }
 
     @Id

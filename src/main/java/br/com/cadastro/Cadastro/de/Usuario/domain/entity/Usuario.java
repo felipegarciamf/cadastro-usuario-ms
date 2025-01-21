@@ -1,5 +1,6 @@
 package br.com.cadastro.Cadastro.de.Usuario.domain.entity;
 
+import br.com.cadastro.Cadastro.de.Usuario.domain.entity.vo.Contatos;
 import br.com.cadastro.Cadastro.de.Usuario.domain.entity.vo.Endereco;
 import br.com.cadastro.Cadastro.de.Usuario.domain.entity.vo.Senha;
 import jakarta.persistence.*;
@@ -37,6 +38,8 @@ public class Usuario {
     @Embedded
     private Endereco endereco;
 
+    @Embedded
+    private Contatos contatos;
 
     public Long getId() {
         return id;
@@ -92,5 +95,13 @@ public class Usuario {
 
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    public Contatos getContatos() {
+        return contatos;
+    }
+
+    public void setContatos(Contatos contatos) {
+        this.contatos = contatos;
     }
 }

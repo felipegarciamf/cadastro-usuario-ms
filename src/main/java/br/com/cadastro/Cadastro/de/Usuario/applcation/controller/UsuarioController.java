@@ -28,7 +28,7 @@ public class UsuarioController {
     @PostMapping
     @Transactional
     public ResponseEntity<Void> cadastrarUsuario(@RequestBody @Validated UsuarioForm usuario){
-        this.usuarioService.cadastrarUsuario(usuario.converter());
+        this.usuarioService.cadastrarUsuario(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 

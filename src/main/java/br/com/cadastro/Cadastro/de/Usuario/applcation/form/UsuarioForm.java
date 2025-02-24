@@ -63,7 +63,7 @@ public class UsuarioForm {
     public Usuario converter() {
         Endereco endereco = new Endereco(this.endereco.getCep(), this.endereco.getRua(), this.endereco.getCidade(), this.endereco.getEstado(), this.endereco.getNumero());
         Senha senha = new Senha(this.senha.getSenha());
-        Contatos contatos = new Contatos(this.contatos.getEmail(), this.contatos.getTelefone());
+        new Contatos(this.contatos.getEmail(), this.contatos.getTelefone())
         return new Usuario(this.nome, this.sobrenome, endereco, senha, contatos);
     }
 
